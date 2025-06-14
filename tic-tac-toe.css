@@ -109,6 +109,10 @@ body{
 
 @media(max-width:598px){
 
+html{
+    font-size: 60%;
+}
+
 .head{
     width: 25rem;
     font-size:4rem;
