@@ -1,8 +1,11 @@
 let boxes =document.querySelectorAll(".box")
-let reset_btn=document.querySelector(".btn2")
+let replay=document.querySelector(".btn2")
 let win =document.querySelector(".win");
+let s1 = document.querySelector("#s1");
+let s2 = document.querySelector("#s2");
 let p1 =document.querySelector(".p1");
 let p2 =document.querySelector(".p2");
+let reset = document.querySelector("#reset")
 let player=true;
 const patterns =[
     [0,1,2],
@@ -14,6 +17,9 @@ const patterns =[
     [3,4,5],
     [6,7,8]
 ]
+
+let score1 = 0
+let score2 = 0
 
 boxes.forEach(
     (box) =>{
@@ -43,14 +49,18 @@ function check(){
                  if(post1 === "X"){
                     win.innerText="winner is X"
                     win.style.display="block";
-                    p1.style.display="none"
-                    p2.style.display="none"
+                    score1 +=1
+                    s1.innerText = score1
+                    // p1.style.display="none"
+                    // p2.style.display="none"
                  }
                  else{
                     win.innerText="winner is O"
                     win.style.display="block";
-                    p1.style.display="none"
-                    p2.style.display="none"
+                    score2 +=1
+                    s2.innerText = score2
+                    // p1.style.display="none"
+                    // p2.style.display="none"
                  };
             }
          }
@@ -66,6 +76,13 @@ function draw() {
         p2.style.display = "none";
     }
 }
-reset_btn.addEventListener("click",()=>{
-        location.reload()
+replay.addEventListener("click",()=>{
+        boxes.forEach((box)=>{
+             box.innerText="";
+            box.disabled =false
+        })
+})
+
+reset.addEventListener("click",()=>{
+       window.location.reload()
 })

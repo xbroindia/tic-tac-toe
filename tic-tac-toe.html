@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./tic-tac-toe.css">
     <body>
-        <div class="container">
-            <header>
+        <div class="container"> 
+            <div class="main">
+                <header>
                 <h1 class="head">tic-tac-toe</h1>
             </header>
-            <div class="main">
             <div class="game">
                 <button class="box"></button>
                 <button class="box"></button>
@@ -24,13 +24,19 @@
                 <button class="box"></button>
                 <button class="box"></button>
             </div>
+            
+            <div class="winner">
+                <p class="p1">player1 =<span id="s1"></span> </p>
+                <p class="p2">player2 =<span id="s2"></span> </p>
+                <p class="win">winner is player1</p>
+            </div>
+            <div class="buttons">
             <button class="btn2">
+                replay
+            </button>
+            <button class="btn2" id="reset">
                 reset
             </button>
-            <div class="winner">
-                <p class="p1">player1 = </p>
-                <p class="p2">player2 = O</p>
-                <p class="win">winner is player1</p>
             </div>
             </div>
         </div>
